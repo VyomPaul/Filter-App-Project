@@ -14,3 +14,20 @@ function draw() {
 function take_snapshot(){
     save('myFilterImage.png');
 }
+
+function modelLoaded() {
+    console.log("PoseNet Is Initialized")
+}
+
+function gotPoses(results)
+
+{
+    if(results.length > 0)
+    {
+        console.log(results);
+        noseX = results[0].pose.nose.x;
+        noseY = results[0].pose.nose.y;
+        console.log("nose x = " + noseX);
+        console.log("nose y = " + noseY);
+    }
+}
